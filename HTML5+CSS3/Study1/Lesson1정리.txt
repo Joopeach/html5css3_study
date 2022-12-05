@@ -1,0 +1,90 @@
+<HTML5 + CSS3 웹 표준의 정석>
+
+- 22.12.05
+
+01-1. HTML
+    - HTML이란? = HyperText Markup Languge (하이퍼텍스트 마크업하는 언어)
+                하이퍼텍스트 = 웹 사이트에서 링크를 클릭해 다른 문서나 사이트로 즉시 이동하는 기능
+      웹 사이트에서 사용하는 문서
+
+    - 웹 표준이란? = 크롬, 인터넷익스플로러 등 모든 사이트에서 사용할 수 있도록 만든 기준. 텍스트 문서
+
+01-2. HTML 기본 문서 구조
+    - visual studio code 에서 HTML문서 만들기
+        1) ctrl + n , ctrl + s 할 때 파일명.html
+        2) ! 입력 후 Tab키 입력 = html 문서 기본 구조 자동으로 make.
+
+        <!doctype    > = 문서 유형을 지정하는 선언문  
+        <html> = 웹 문서 시작 알리는 태그
+         ex) lang =  사용할 언어 지정
+             de 독일어, en 영어, fr 프랑스어, ja 일본어, ko 한국어, zh 중국어
+        <head> = 브라우저 정보를 주는 태그
+        <title> = 문서제목
+        <meta> = 문자세트 지정 ex) utf-8 , 모바일기기 고려 veiwport 등
+        <body> = 실제 브라우저 띄우는 내용
+
+02-1. 텍스트 관련 태그
+    - 텍스트를 묶는 태그
+        - <hn> </hn> = 제목 ex) h1 ~ h6
+        - <p> </p>  = 단락 만들기 (paragraph 줄임말)
+        - <br> = 줄 바꾸기 (break 줄임말)
+        - <hr> = 분위기 전환을 위한 수평 줄 (horizontal 줄임말) / CSS를 이용해 가로선 없앨 수 있다.
+        - <blockquote> </blockquote> = 인용문
+        - <pre> /<pre> = 입력하는 그대로 화면에 표시 (preformat 줄임말)
+    
+02-2. 텍스트를 한 줄로 표시 태그
+        - <strong> /<strong>   <b> </b>  = 굵게 표시
+            strong = 경고, 주의사항 같은 중요한 내용 강조
+            b = 단순히 굵게 표시
+        - <em> </em>    <i> </i> = 이탤릭체 표시
+            em = 문장 내 흐름상 특정 부분 강조
+            i = 마음 속의 생각, 꿈, 기술적 용어, 다른언어 관용구
+        - <q> /<q> = 인용 내용 표시 (quote 줄임말)    
+                     인라인 레벨 태그로 줄바꿈 없음
+        - <mark> </mark> = 형광편 효과
+        - <span> </span> = 줄바꿈 없이 영역 묶기
+        - <ruby>내용 <rt>주석</rt> </ruby> = 동아시아 글자 표시  
+
+    - 기타 텍스트 관련
+        - <abbr> </abbr> = 약자 표시. title 속성 함께 사용 가능
+                           ex) <p><b><abbr title="Internet of Things">IOT</abbr></b> </p>
+        - <cite> </cite> = 웹 문서나 포스트 내 참고 내용 표시
+        - <code> </code> = 컴퓨터 인식을 위한 소스 코드
+        - <kbd> </kbd> = 키보드 입력이나 음성 명령 같은 사용자 입력 내용
+        - <small> </small> = 부가 정보처럼 작게 표시해도 되는 텍스트
+        - <sub></sub> = 아래 첨자
+        - <sup></sup> = 위 첨자
+        - <s></s> = 취소선
+        - <u></u> = 밑줄
+
+02-3. 목록 태그
+        - <ul></ul> <li></li> = 순서 없는 목록 만들기
+        - <ol></ol> <li></li> = 순서 목록 ex) 1, 2 순서번호가 붙음 type="a" 이런식으로 바꿀 수 있음.
+        - <dl></dl> 태그 목록 만듬 <dt></dt> 제목 <dd></dd> 설명
+
+02-4. 표  
+        - <table>
+            <tr> 행 (가로)
+                <td> 내용 </td>
+                <td> 내용 </td>
+            </tr>
+           </table>   
+        - <colspan></colspan> 가로로 합칠 셀
+        - <rowspan></rowspan> 세로로 합칠 셀
+        
+        - <caption> 표제목</caption> 중앙표시   
+        - <figcaption> 왼쪽부터 표제목 표시
+            <figure> 표 전체를 감쌈
+                <figcaption> 제목(왼쪽정렬) 표시
+                <p> 제목 </p>
+                </figcaption>
+                <table>
+                    <tr>
+                        <th>1</th>
+                        <th>2</th>
+                    </tr>
+                </table>
+            </figure>            
+        - aria-describedby 속성 : 표에 대한 설명 제공
+        - <thead> 표 제목 <tbody> 표 본문내용 <tfoot> 표 요약
+
