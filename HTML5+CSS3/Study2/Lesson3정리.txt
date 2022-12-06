@@ -1,0 +1,97 @@
+<HTML5 + CSS3 웹 표준의 정석>
+
+- 22.12.06
+
+Lesson 3 이미지와 하이퍼링크
+
+03-1. 이미지(Image)
+      - 웹에서 사용하는 이미지 형식
+      GIF(Graphic Interchange Form) : 이미지 파일 크기가 작아 '아이콘' '불릿' 등 작은 이미지에 주로 사용
+                                      투명한 배경, 움직이는 이미지를 만들 수 있다는 장점
+      JPG/JPEG(Joint Photographic Experts Group) : 사진을 위해 개발된 형식
+                                                   GIF보다 다양한 색상, 명암 표현 가능
+                                                   저장을 반복하다보면 화질이 ↓ 떨어짐
+      PNG(Portable Network Graphics) : 투명 배경을 만들면서 다양한 색상 표현 가능
+                                       네트워크용으로 개발되어 최근 多 USE
+
+      - <img> 태그 
+        <img src="경로" [속상="값"]>  
+
+        - src 속성 : 이미지 파일 경로 지정하기
+                     정확한 파일 경로 지정  
+
+                     - 같은 폴더 內 = <img src="파일명.jpg">
+                     - 다른 하위 폴더 內 = <img src="폴더명/파일명.jpg">
+                     - 웹 상의 링크 = <img src="https://링크.jpg">
+
+        - alt 속성 : 이미지를 설명해 주는 대체 텍스트
+                     화면 낭독기에서 이미지 대신 대체 텍스트를 읽어줌.
+
+                     <img src="파일명.jpg" alt="파일에대한설명">
+
+        - width, height 속성 : 이미지 크기 조정하기 but 파일용량은 같음 
+
+        - <figure>, <figcaption> 태그 : 이미지에 설명 글 붙이기
+            <figure></figure> : 설명글 붙일 대상 지정
+                                - 웹 문서 안에서 한 단위가 되는 요소를 묶을 때 사용
+
+            <figcaption></figcaption> : 이미지를 설명하는 대체 텍스트
+                                        - 이미지를 표시할 수 없는 상황일 때 대체 텍스트 표시
+        ex) <figure>
+                <img src="images/prod.jpg" alt="예멘 모카 마타리">
+                <figcaption>예멘 모카 마타리(Yemen Mocha Mattari)</figcaption>
+            </figure>      
+
+03-2. 링크(Link)
+     - <a> 태그 href 속성 : 링크 만들기
+     ex) <a href="링크할 주소" [속성="속성 값"] 테스트  </a>
+         <a href="링크할 주소" [속성="속성 값"] <img src="이미지 파일 경로"></a>
+
+        - href : 링크한 문서나 사이트의 주소 입력
+        - target : 링크한 내용이 표시될 위치(현재 창 또는 새 창)을 지정합니다.
+        - download 
+        - rel : 현재 문서와 링크한 문서의 관계
+        - hreflang : 링크한 문서의 언어를 지정
+        - type : 링크한 문서의 파일 유형을 알려줌
+
+     - target 속성 : 새 탭에서 링크 열기
+        target 속성 內 사용할 수 있는 값)
+                                       _blank : 링크 내용이 새 창, 새 탭에서 열림
+                                       _self  : target 속성의 기본 값. 링크가 있는 화면에서 열림
+                                       _parent : 프레임을 사용했을 때 링크 내용을 부모 프레임에 표시
+                                       _top : 프레임을 사용했을 때 프레임에서 벗어나 링크 내용을 전체 화면에 표시
+
+     - 한 페이지 안에서 점프 - 앵커(Anchor)
+     ex) <태그 id="앵커 이름"> text or image </태그>
+         <a href="#앵커 이름"> text or image </a>
+
+    - <map> 태그 <area> 태그 usemap 속성 - 이미지 맵 지정하기
+     ex) <map name="맵이름">
+            <area>
+            <area>
+            ..
+         </map>
+
+         <img src="이미지 파일" usemap="#맵이름">
+
+        속성정리
+        alt = 대체 텍스트 지정
+        coords = 링크로 사용할 영역을 시작 좌표와 끝 좌표를 이용해 지정
+        download = 링크 클릭 시 링크 문서 다운로드
+        href = 링크 문서(사이트) 경로를 지정
+        media = 링크 문서(사이트) 어떤 미디어에 최적화시킬지 지정
+        rel = 현재 문서와 링크 문서 사이의 관계를 지정 [값 = lternate, bookmark, help, license, next, nofollow, noreferer, prefetch, prev, search, tag]
+        shape = 링크로 사용할 영역의 형태 지정 [값 = default, rect, circle, poly]
+        target = 표시할 대상 지정 [값 = _blank, _parent, _self, _top, 프레임 이름]
+        type = 링크 문서의 미디어 유형 지정
+
+03-3. SVG이미지
+    SVG이미지란? 
+                SVG란 Scalable Vector Graphics(스케일 러블 벡터 그래픽)
+                scalable이란 '확대가 가능하다', '자연스럽게 크기 조절이 가능하다'
+
+                - 이미지를 확대하거나 축소하여도 테두리 원래의 깨끗한 상태가 유지가능
+                - 로고, 아이콘으로 많이 이용
+                - 데이터 시각화 차트, 다이어그램, 지도 등을 구현할 때 many use
+                
+
