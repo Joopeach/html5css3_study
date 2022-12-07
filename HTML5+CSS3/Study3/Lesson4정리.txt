@@ -1,0 +1,111 @@
+<HTML5 + CSS3 웹 표준의 정석>
+
+- 22.12.07
+
+Lesson 4 폼 관련 태그들
+
+04-1. 폼 만들기
+      - 웹 에서 만나는 폼(form)
+        - 사용자가 웹 사이트로 정보를 보낼 수 있는 요소들
+        - 폼과 관련된 대부분의 작업들 = 정보 저장, 정보 검색, 수정 등
+        - 이런 작업들 모두 데이터베이스(Database)를 기반으로 함
+        - 아이디를 입력하는 텍스트 필드 , 버튼 =(만드는) HTML TAG
+        - 폼에 입력한 사용자 정보 처리 = ASP, PHP Server 프로그래밍 이용
+        - [이번에 배울것들 = 브라우저 표시 폼]
+
+      - <form> 태그 - 폼 만들기
+            <form [속성 = "속성 값"]> 여러 폼 요소 </form>
+
+            속성)   method = 사용자가 입력한 내용들을 서버 쪽 프로그램으로 어떻게 넘겨줄지 지정
+                             get - 주소 표시줄에 사용자가 입력한 내용이 그대로 나타남 (256byte~4096byte 데이터만 서버로 넘김)
+                             post - 대부분 이 방식을 사용 (암호화시켜서 넘겨 화면에 안 나타남)
+                    name = 폼의 이름을 ㅣ정
+                    action = <form>태그 안의 내용들을 처리해 줄 서버 상의 프로그램을 지정
+                    target = action 속성에서 지정한 스크립트 파일을 현재 창이 아닌 다른 위치에 열도록 지정
+
+      - 폼 요소를 묶는 태그
+            <label> 태그 - 
+            <fieldset> [속성 = "속성 값"] ... </fieldset>
+            <legend> 태그 - 그룹으로 묶는 구역에 제목을 붙이는 태그
+
+04-2. 사용자 입력을 위한 <input>태그
+          - 사용자가 입력하는 부분은 거의 <input> 태그를 이용해 처리
+          - 입력하는 내용의 종류는 <input> 태그의 type 속성을 이용
+
+            ex) 기본형
+                      <input type="유형"> [속성="속성 값"]
+                id속성 이용
+                      <input type="text" id="user-name" size="10">
+
+            << <input> TAG >>
+            hidden = 사용자에게 보이지 않지만 서버로 넘겨지는 값을 가짐
+            text = 한 줄짜리 텍스트를 입력할 수 있는 텍스트 상자를 넣음
+            search = 검색 상자
+            tel = 전화번호 입력 필드
+            url = URL 주소 입력 필드
+            email = 메일 주소 입력 필드
+            password = 비밀번호 입력 필드                               입력한 내용이 * 같은 것으로 가려져 나옴
+            datetime = 국제 표준시(UTC)로 설정된 날짜와 시간을 넣음
+            datetime-local = 사용자가 있는 지역 기준 날짜와 시간을 넣음
+            date = 사용자 지역 기준 날짜
+            month = 사용자 지역 기준 월 (연,월)
+            week = 사용자 지역 기준 주 (연,주)
+            time = 사용자 지역 기준 시간
+            number = 숫자를 조절할 수 있는 화살표
+            range = 숫자를 조절할 수 있는 슬라이드 막대
+            color = 색상 표
+            checkbox = 2개 이상 선택가능한 체크박스
+            radio = 1개만 선택가능한 라디오 버튼
+            file = 파일 첨부 버튼
+            submit = submit 서버 전송 버튼
+            image = submit 버튼 대신 사용할 이미지
+            reset = 리셋 버튼
+            button = 버튼 
+
+04-3. <input> 태그의 다양한 속성
+      - autofocus  = 페이지를 불러오자마자 원하는 폼 요소에 마우스 커서 표시줄에 표시
+      - placeholder = 입력칸에 힌트를 흐릿하게 표시
+      - readonly = 내용을 보기만 하고 입력하지 못하게 잠금
+                   속성 값 없이 readonly 라고만 적으면 끄읕.
+                ex) <label class="reg" for="subj">영어회화(초급)</label>
+                    <input type="text" id="subj" value="오전9:00~11:00" readonly>
+      - required = 필수 필드 체크
+                   속성 값 없이 required 라고만 입력
+                   필수 필드는 브라우저에서 직접 체크하는 것이므로 오류 메시지 내용은 브라우저들마다 다름.
+      - min, max, step = 해당 필드의 최솟값, 최댓값
+                          step 허용된 범위 내의 숫자 간격
+      - size, minlength, maxlength = 길이, 최소길이, 최대길이
+
+04-4. 여러 데이터 나열
+      - <select>, <optgroup>, <option> 태그
+        - 여러 옵션 중에서 선택 - 드롭다운 목록
+        - 공간을 최소한으로 사용하면서 여러 옵션 표시 가능
+        ex) <select 속성="속성 값">
+                <option value='값' [속성="속성값"]> 내용1 </option>
+                <option value='값' [속성="속성값"]> 내용2 </option>
+                <option value='값' [속성="속성값"]> 내용3 </option>
+            </select>
+      - <datalist>, <option>
+        - 데이터 목록에 제시한 값 중에서 선택하면 그 값이 자동으로 텍스트 필드에 입력됨
+        - 데이터 목록에 id를 이용해 이름을 붙임
+        - <input> 태그의 list 속성에 데이터 목록 id 지정
+      <option> 태그의 속성
+        value = 옵션을 선택했을 때 서버로 넘겨질 값을 지정
+        selected = 화면에 표시될 때 기본으로 선택되어 있는 옵션 지정  
+        label = 사용자를 위해 브라우저에 표시할 레이블
+
+      - <textarea> 태그 - 여러 줄 입력하는 텍스트 영역 만들기
+            ex) <textarea> [속성="속성 값"]> 내용 </textarea>
+
+04-5. 그 외 기타 폼 요소들
+    <button> 태그
+        <button [type="submit|reset|button"]>내용</button>
+            속성 값
+                submit = 폼을 서버로 전송 | <button type="submit">전송하기</button>
+                reset = 폼에 입력한 내용 초기화 | <button type="reset">다시쓰기</button>
+                button = 버튼 형태를 만듬 (그외는 X) | <button type="button">주소입력</button>
+                         (input도 비슷함) 
+                          
+    
+
+                                   
