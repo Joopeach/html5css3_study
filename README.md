@@ -6,4 +6,5 @@
 ### 22.12.07       Lesson 4 (Forms Tags)
 ### 22.12.08       Lesson 5 ~ 6 (CSS & Text style)
 ### 22.12.09       Lesson 7 (Color & Background Style)
-### 22.12.12(10日) Lessong 8 ( CSS Box Model)
+### 22.12.12(10日) Lesson 8 (CSS Box Model)
+### 22.12.15(11日) Lesson 9 (CSS Layout) 
