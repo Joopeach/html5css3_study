@@ -10,3 +10,4 @@
 ### 22.12.15(11日) Lesson 9 (CSS Layout) 
 ### 22.12.16(12日) Lesson 10 (HTML5 and Semantic Tag) 
 ### 22.12.17(13日) Lesson 11 (HTML5 and Multimedia) 
+### 22.12.18(14日) Lesson 12 (CSS3 Selector) 
